@@ -1,0 +1,125 @@
+//sidebar
+$sidebar-width: 250px;
+$btn-height: 55px;
+$sidebar-icon-width: 80px;
+$sidebar-icon-size: 22px;
+
+$btn-height-close: 65px;
+$sidebar-close-width: 110px;
+$sidebar-close-icon-mt: -20px;
+$sidebar-close-icon-width: 100%;
+
+$logo-width: 85px;
+$logo-close-width: 55px;
+
+//small text
+$small-text-top: 57%;
+$small-text-size: 14px;
+$small-text-weight: 400;
+$small-text-letter-spacing: 1.2px;
+
+//content-admin
+$content-distance: 60px;
+$content-close-left: calc($sidebar-close-width + $content-distance);
+$content-left: calc($sidebar-width + $content-distance);
+
+//header-admin
+$header-height: 70px;
+$header-height-mob: 60px;
+$logo-header-width: 60px;
+$logo-header-width-mob: 50px;
+
+
+$blur-items: blur(3px);
+
+
+/* ====== Transition ====== */
+$tran-03: all 0.2s ease;
+$tran-03: all 0.3s ease;
+$tran-04: all 0.3s ease;
+$tran-05: all 0.3s ease;
+
+$border-radius-container: 30px;
+$table-border-radius: 10px;
+
+//colors
+$admin-primary-color: #6668eb;
+$bg-dark-color: #0e101b;
+$bg-reverse-color-dark: #ececec;
+$bg-dark-sidebar: #20232c; //card
+$bg-dark-sidebar-hover: #2a2e3b; //card hover
+
+$column: #161922;
+$unselects: rgba(24, 27, 37, 0.6);
+//$unselects: #2a2e3b;
+$selects: rgba($bg-dark-sidebar, $alpha: .5);
+
+//admin
+//$color-sidebar: #1f1f2b;
+//$color-sidebar: #1e1e1e;
+//$color-sidebar: #191919;
+$dark-border-color: #2d2d3f;
+$dark-border-color: #1d1d24;
+$dark-border-input-color: #ababab;
+$dark-dropdown-color: #232330;
+$dark-dropdown-color: #232323;
+
+
+$text-dark-color : #ececec;
+
+$accent-color: #e5b8b8;
+
+
+//light-theme
+$bg-light-color: #ebeaef;
+$bg-light-sidebar: #f5f5f5;
+$text-light-color: #1c1c1c;
+$light-border-color: #1d1d24;
+$light-border-input-color: #1c1c1c;
+$bg-reverse-color-light: #1c1c1c;
+$light-dropdown-color: #232323;
+$accent-light-color: green;
+
+
+//inputs
+$input-border-radius: 3px;
+$max-height-btn: 40px;
+
+
+//input
+$height-omni-btn-input: 45px;
+$padding-input-omni: 8px 14px;
+$padding-select-omni: 8px 14px 14px 50%;
+$btn-omni-padding: 4px 6px;
+
+//
+$header-height-nav: 60px;
+
+//barra de scroll
+$scroll-width: 4px;
+$scroll-radius: 10px;
+$scroll-track-color: $bg-dark-sidebar;
+$scroll-track-board-color: rgba($color: #000, $alpha: 1);
+$scroll-thumb-color: rgba($admin-primary-color, $alpha: .5);
+$scroll-thumb-color-hover: rgba($admin-primary-color, $alpha: 1);
+$scroll-border: rgba($admin-primary-color, $alpha: .5);
+
+
+//modal
+$modal-size: 960px;
+$modal-size: 760px;
+
+.bg-secondary {
+    background-color: #6c757d !important;
+    color: #fff;
+}
+
+/*
+//aqui do notion
+$bg: #191919;
+$column: #262626;
+$card: #3a3a3a;
+$card-hover: #424242;
+$unselects: #252525;
+$selects: #2c2c2c;
+*/

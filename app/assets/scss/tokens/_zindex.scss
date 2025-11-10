@@ -1,0 +1,14 @@
+/* styles/tokens/_zindex.scss */
+$z-overlay: 1000;
+$z-modal: 1100;
+$z-toast: 1200;
+
+
+/* já existiam */
+$z-overlay: 1000;
+$z-modal: 1100;
+$z-toast: 1200;
+
+/* novos (usados no layout) */
+$z-sticky: 900;     // header fixo
+$z-drawer: 1050;    // sidebar mobile acima do conteúdo, abaixo de modal

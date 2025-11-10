@@ -1,0 +1,58 @@
+Passo 6 — Rotas de teste
+6.1 Página para aprovados apenas
+
+Exemplo de página privada + aprovada:
+
+<!-- pages/dashboard.vue -->
+<script setup lang="ts">
+    definePageMeta({ middleware: ['auth', 'approved'] })
+</script>
+
+<template>
+    <div class="container py-4">
+        <h1 class="h4">Dashboard</h1>
+        <p>Visível apenas para usuários ativos.</p>
+    </div>
+</template>
+
+6.2 Página de pendência de aprovação
+<!-- pages/pending-approval.vue -->
+<script setup lang="ts">
+    import { useAuthStore } from '@/stores/auth'
+    definePageMeta({ middleware: 'auth' })
+    const auth = useAuthStore()
+</script>
+
+<template>
+    <div class="container py-5">
+        <h1 class="h4 mb-2">Conta em análise</h1>
+        <p class="text-muted">Seu cadastro foi recebido e está aguardando aprovação. Assim que liberarmos, você terá
+            acesso completo.</p>
+        <div class="mt-3">
+            <NuxtLink to="/" class="btn btn-outline-secondary btn-sm">Voltar</NuxtLink>
+            <button class="btn btn-link btn-sm"
+                @click="$fetch('/api/auth/logout', { method: 'POST' }).then(() => navigateTo('/login'))">
+                Sair
+            </button>
+        </div>
+        <div v-if="auth.user" class="mt-4 small text-muted">
+            Status atual: <strong>{{ auth.user.status || 'pending' }}</strong>
+        </div>
+    </div>
+</template>
+
+6.3 Rota restrita para admin (demo)
+<!-- pages/admin/only-admin.vue -->
+<script setup lang="ts">
+    definePageMeta({
+        middleware: ['auth', 'approved', 'roleGuard'],
+        levels: ['admin'] // ou roles: ['admin'] dependendo de como vai usar
+    })
+</script>
+
+<template>
+    <div class="container py-4">
+        <h1 class="h4">Área restrita (somente admin)</h1>
+        <p>Se você está vendo isso, seu <code>level</code> é <strong>admin</strong>.</p>
+    </div>
+</template>

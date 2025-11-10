@@ -1,0 +1,27 @@
+
+
+/* Tema dark */
+:root {
+    --nx-primary: #12b2c1;
+
+    --nx-bg: #002d3b;
+    /* seu fundo */
+    --nx-surface: #073544;
+    --nx-surface-2: #0c4252;
+    --nx-border: rgba(255, 255, 255, .14);
+    --nx-fg: #e6f7fa;
+    --nx-muted: #a5c5cc;
+}
+
+/* Tema base (light) */
+:root [data-theme="light"]{
+    --nx-primary: #12b2c1;
+
+    /* light */
+    --nx-bg: #f6f8f9;
+    --nx-surface: #ffffff;
+    --nx-surface-2: #f1f5f6;
+    --nx-border: rgba(0, 0, 0, .10);
+    --nx-fg: #0d1b21;
+    --nx-muted: #5b6b73;
+}

@@ -1,0 +1,122 @@
+/* assets/scss/tokens/_sidebar.scss */
+
+/* ===== BASE (desktop “padrão”) ===== */
+:root {
+    /* Larguras */
+    --nx-sb-w: 240px;
+    --nx-sb-w-collapsed: 80px;
+    --nx-sb-w-mob: 280px;
+
+    /* Tipografia (ABERTA) */
+    --nx-sb-font: 14px;
+    /* item nível 1 */
+    --nx-sb-title-font: 12px;
+    /* título de grupo */
+    --nx-sb-sub-font: 13px;
+    /* subitens */
+    --nx-sb-caption-font: 11px;
+    /* legenda (usada no modo fechado, abaixo do ícone) */
+
+    /* Tipografia (FECHADA) – pode ser igual ou diferente */
+    --nx-sb-font-collapsed: 12px;
+    --nx-sb-caption-font-collapsed: 11px;
+    --nx-sb-sub-font-collapsed: 12px;
+
+    /* Ícones (ABERTA) */
+    --nx-sb-icon: 18px;
+    /* item/trigger */
+    --nx-sb-icon-sub: 16px;
+    /* subitem */
+    --nx-sb-icon-stroke: 1;
+    /* Lucide stroke */
+
+    /* Ícones (FECHADA) */
+    --nx-sb-icon-collapsed: 20px;
+    --nx-sb-icon-sub-collapsed: 16px;
+
+    /* Layout */
+    --nx-sb-item-pad-y: .55rem;
+    --nx-sb-item-pad-x: .7rem;
+    --nx-sb-gap: .75rem;
+    --nx-sb-radius: 12px;
+
+    /* Subnav */
+    --nx-sb-sub-indent: 20px;
+
+    /* --------- MUX “CURRENT” (derivadas por estado) ---------
+     ATENÇÃO: NÃO edite estas vars via UI; elas só espelham o estado.
+     No CSS do componente nós trocamos as *CURRENT* quando a sidebar colapsa.
+  */
+    --nx-sb-font-current: var(--nx-sb-font);
+    --nx-sb-sub-font-current: var(--nx-sb-sub-font);
+    --nx-sb-caption-font-current: var(--nx-sb-caption-font);
+
+    --nx-sb-icon-current: var(--nx-sb-icon);
+    --nx-sb-icon-sub-current: var(--nx-sb-icon-sub);
+}
+
+/* Tema escuro (opcional; sobrescreva o que quiser) */
+:root[data-theme="dark"] {}
+
+/* ===== BREAKPOINTS (responsivo) ===== */
+
+/* ≥1440px (2K/XL): um pouco maior */
+@media (min-width: 1440px) {
+    :root {
+        --nx-sb-w: 300px;
+        --nx-sb-icon: 20px;
+        --nx-sb-sub-font: 14px;
+
+        --nx-sb-icon-collapsed: 22px;
+        /* fechado no XL */
+        --nx-sb-caption-font-collapsed: 12px;
+    }
+}
+
+/* 1200–1439px (LG): confortável */
+@media (max-width: 1439px) and (min-width: 1200px) {
+    :root {
+        --nx-sb-w: 280px;
+    }
+}
+
+/* 992–1199px (MD): compacta levemente */
+@media (max-width: 1199px) and (min-width: 992px) {
+    :root {
+        --nx-sb-w: 260px;
+        --nx-sb-icon: 17px;
+        --nx-sb-font: 13px;
+        --nx-sb-sub-font: 12px;
+
+        --nx-sb-icon-collapsed: 19px;
+        --nx-sb-font-collapsed: 12px;
+    }
+}
+
+/* ≤991px (SM – drawer mobile/tablet) */
+@media (max-width: 991px) {
+    :root {
+        --nx-sb-w-mob: 280px;
+        --nx-sb-font: 13px;
+        --nx-sb-title-font: 11px;
+        --nx-sb-sub-font: 12px;
+        --nx-sb-icon: 18px;
+        --nx-sb-icon-sub: 16px;
+        --nx-sb-gap: .65rem;
+
+        /* no mobile o colapso é “off-canvas”, mas mantemos defaults */
+        --nx-sb-icon-collapsed: 18px;
+    }
+}
+
+/* ≤360px (XS – super compacto, ex: iPhone SE) */
+@media (max-width: 360px) {
+    :root {
+        --nx-sb-w-mob: 260px;
+        --nx-sb-font: 12px;
+        --nx-sb-caption-font: 10px;
+        --nx-sb-icon: 16px;
+        --nx-sb-icon-sub: 14px;
+        --nx-sb-item-pad-x: .6rem;
+    }
+}

@@ -1,0 +1,36 @@
+/* styles/tokens/_colors.scss */
+:root {
+    --nx-bg: #002d3b;
+    /* fundo */
+    --nx-fg: #e8f4f6;
+    /* texto padrão em fundo escuro */
+    --nx-muted: #9fb7bd;
+
+    --nx-primary: #12b2c1;
+    /* destaque */
+    --nx-primary-600: #0ea1ae;
+    --nx-border: rgba(255, 255, 255, 0.12);
+    --nx-surface: rgba(255, 255, 255, 0.04);
+    --nx-surface-2: rgba(255, 255, 255, 0.06);
+
+    --nx-success: #2ecc71;
+    --nx-warn: #f1c40f;
+    --nx-danger: #ff5a5f;
+
+    --nx-icon-stroke: .75px;
+}
+
+html.theme-light {
+    --nx-bg: #f7fbfc;
+    --nx-bg: #ff0000;
+    --nx-fg: #0b1b20;
+    --nx-muted: #55737b;
+    --nx-border: rgba(0, 0, 0, 0.12);
+    --nx-surface: #ffffff;
+    --nx-surface-2: #f0f4f5;
+}
+
+button{
+    background:  var(--nx-primary) !important;
+}
+
