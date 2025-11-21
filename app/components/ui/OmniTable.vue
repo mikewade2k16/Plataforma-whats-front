@@ -41,22 +41,15 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useTaskModal } from '@/stores/taskModal'   // ⬅️ IMPORT
 import {
-    FieldInlineEdit,
-    FieldText,
-    FieldSelect,
-    FieldSwitch,
-    FieldImage,
-    FieldMultiSelect,
+    FieldInlineEdit, FieldText, FieldSelect, FieldSwitch, FieldImage, FieldMultiSelect,
 } from './fields'
 
-const props = defineProps<{
-    items: any[]
-    schema: Record<string, any>
-    editable?: boolean
-}>()
-
+const props = defineProps<{ items: any[]; schema: Record<string, any>; editable?: boolean }>()
 const emit = defineEmits(['update', 'archive', 'delete'])
+
+const modal = useTaskModal() // ⬅️ FIX: evita undefined no @click
 
 const visibleColumns = computed(() =>
     Object.fromEntries(Object.entries(props.schema).filter(([_, v]) => !v.hidden))
@@ -78,6 +71,7 @@ const emitUpdate = (row: any, key: string, val: any) => {
 </script>
 
 <style scoped lang="scss">
+/* (igual ao seu) */
 .table-crow {
     display: flex;
     flex-direction: column;

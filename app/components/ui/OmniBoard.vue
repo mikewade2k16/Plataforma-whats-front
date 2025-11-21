@@ -48,4 +48,35 @@ const resolveFieldComponent = (cfg: any) => {
 const emitUpdate = (row: any, key: string, val: any) => {
     emit('update', { id: row.id, patch: { [key]: val } })
 }
+
+
+
+const columnField = computed(() => {
+    // 1) prioridade para prop boardBy
+    if (props.boardBy) return props.boardBy
+
+    // 2) se no schema algum campo tiver `boardColumn: true`
+    const entry = Object.entries(props.schema || {}).find(
+        ([, cfg]: any) => cfg && (cfg as any).boardColumn,
+    )
+    // 3) fallback padrão
+    return entry ? entry[0] : 'status'
+})
+
+// exemplo de agrupamento (ajusta conforme seu código atual)
+const columns = computed(() => {
+    const groups: Record<string, any[]> = {}
+    for (const item of props.items || []) {
+        const key = (item as any)[columnField.value] || 'Sem valor'
+        if (!groups[key]) groups[key] = []
+        groups[key].push(item)
+    }
+    return Object.entries(groups).map(([id, items]) => ({
+        id,
+        title: id,
+        items,
+    }))
+})
+
+
 </script>

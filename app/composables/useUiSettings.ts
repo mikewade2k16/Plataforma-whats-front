@@ -50,14 +50,15 @@ export type NavItem = { to?: string; icon: string; label: string; children?: Nav
 
 const defaultNav: NavItem[] = [
     { to: '/dashboard', icon: 'layout-dashboard', label: 'Dashboard' },
-    { to: '/leads', icon: 'users', label: 'Chats' },
-    { to: '/whatsapp', icon: 'message-square', label: 'Whatsapp' },
-    { to: '/projects', icon: 'message-square', label: 'Projetos' },
-    { to: '/tasks', icon: 'message-square', label: 'Tarefas' },
-    { to: '/users', icon: 'message-square', label: 'Usuários' },
-    { to: '/clients', icon: 'message-square', label: 'Clientes' },
+    { to: '/leads', icon: 'users', label: 'Leads' },
+    { to: '/chat', icon: 'users', label: 'Chat' },
+    { to: '/whatsapp', icon: 'whatsapp', label: 'Whatsapp' },
+    { to: '/projects', icon: 'clipboard-paste', label: 'Projetos' },
+    { to: '/tasks', icon: 'file-cog', label: 'Tarefas' },
+    { to: '/users', icon: 'user-round', label: 'Usuários' },
+    { to: '/clients', icon: 'users-round', label: 'Clientes' },
     {
-        icon: 'folder',
+        icon: 'monitor-cog',
         label: 'DevTools',
         children: [
             { to: '/settings/sidebar', icon: 'settings', label: 'Configurações' },

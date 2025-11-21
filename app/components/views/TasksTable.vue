@@ -1,25 +1,22 @@
 <template>
-    <OmniTable :items="rows" :schema="tableSchema" :editable="true" @update="onUpdate"
+    <OmniTable :items="rows" :schema="schemaComputed" :editable="true" @update="onUpdate"
         @archive="id => $emit('archive', id)" @delete="id => $emit('delete', id)" />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, getCurrentInstance } from 'vue'
 import OmniTable from '@/components/ui/OmniTable.vue'
 import { useViewsStore } from '@/stores/views'
 import { buildTableSchema } from '@/schemas/tasks.schema'
-import { useTaskModal } from '@/stores/taskModal'  
-const modal = useTaskModal() 
 
-const props = defineProps<{ rows: any[] }>()
+const props = defineProps<{ rows: any[]; schema?: Record<string, any> }>()
 defineEmits(['update', 'archive', 'delete'])
 
 const views = useViewsStore()
-const tableSchema = computed(() => buildTableSchema(views.active?.properties || {}))
+const fallbackSchema = computed(() => buildTableSchema(views.active?.properties || {}))
+const schemaComputed = computed(() => props.schema || fallbackSchema.value)
 
 function onUpdate(payload: { id: number; patch: Record<string, any> }) {
-    // repassa pra página
-    // (não chamamos store aqui pra manter um único ponto de escrita)
     ; (getCurrentInstance() as any).emit('update', payload)
 }
 </script>
